@@ -26,7 +26,7 @@ foreach($obj as $key => $value) {
 //example 
 
 <?php
-class DistrictCollection implements IteratorAggregate {
+class DistrictCollection implements IteratorAggregate,Countable{
   private $districts;
   public function __construct(){
     $this->districts = array();
@@ -40,13 +40,16 @@ class DistrictCollection implements IteratorAggregate {
   public function getIterator(){
     return new ArrayIterator($this->districts);
   }
+  public function count(){
+    return count($this->districts);
+  }
 }
 $d = new DistrictCollection();
 $d->add('Dhaka');
 $d->add('Bogra');
 $d->add('Sylhet');
 $d->add('Rajshahi');
-
+echo count($d)."<br>";
 foreach ($d as $b) {
   echo "$b" . "<br>";
 }
