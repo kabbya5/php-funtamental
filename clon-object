@@ -1,0 +1,58 @@
+class FavoriteColor{
+  private $color;
+  public function __contruct ($color){
+    $this->color = $color;
+  }
+  public function setColor($color){
+    $this->color = $color;
+  }
+  public function getColor(){
+    print_r($this->color);
+    echo "<br>";
+  }
+}
+$fc1 = new FavoriteColor('red');
+$fc2 = clone $fc1;
+$fc1->setColor('#fff');
+$fc2->setColor('#343');
+$fc1->getColor();
+$fc2->getColor();
+
+
+
+// another example
+
+class Color{
+  public $color;
+  function __construct($color){
+    $this->color = $color;
+  }
+  public function setColor($color){
+    $this->color = $color;
+  }
+}
+
+class FavoriteColor{
+  private $color;
+  public function __construct ($color){
+    $this->color = $color;
+  }
+  public function setColor($color){
+    $this->color = $color;
+  }
+  public function updateColor($color){
+
+    $this->color = new Color($color);
+  }
+  public function getColor(){
+    print_r($this->color);
+    echo "<br>";
+  }
+}
+$fc1 = new FavoriteColor('red');
+$fc1->getColor();
+$fc2 = clone $fc1;
+$fc2->getColor();
+$fc2->updateColor('green');
+$fc2->getColor();
+$fc1->getColor();
