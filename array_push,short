@@ -1,0 +1,20 @@
+<?php
+  class ArrayShort{
+    public $numbers = array();
+    function __construct(array $numbers){
+      
+        array_push($this->numbers,$numbers);
+      
+     
+    }
+    
+    function newNumbers(){
+      $sort =  $this->numbers;
+      sort($sort);
+      return $sort;
+    }
+  }
+  
+  $nuber1 = new ArrayShort(array(11, -2, 4, 35, 0, 8, -9));
+  print_r($nuber1->neWNumbers());
+?>
