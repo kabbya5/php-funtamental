@@ -1,0 +1,51 @@
+<?php
+	class MotorCycle{
+	  private $displacemnet, $capacity, $mileage;
+	  function __construct($displacemnet, $capacity, $mileage){
+	    $this->displacement = $displacemnet;
+	    $this->capacity = $capacity;
+	    $this->mileage = $mileage;
+	    
+	  }
+	  function getDisplacemnet(){
+	    return $this->displacement;
+	  }
+	  function setDisplacement($displacemnet){
+	    $this->displacement = $displacemnet;
+	  }
+	  
+	  function __get($name){
+	    echo $this->name;
+	  }
+	}
+	
+	$plusar = new MotorCycle('150cc', '16ltr', '40kmph');
+	echo $plusar->getDisplacemnet() . "\n";
+	echo $plusar->displacement . "\n";
+	
+	//another example
+	
+	class Student{
+	  private $informations;
+	  
+	  function __construct($name,$roll,$section,$subject){
+	    $this->informations = [];
+	    $this->informations['name'] = $name;
+	    $this->informations['roll'] = $roll;
+	    $this->informations['section'] = $section;
+	    $this->informations['subject'] = $subject;
+	  }
+	  
+	  function __get($name){
+	    echo $this->informations[$name] . "\n";
+	  }
+	  function __set($name, $value){
+	    $this->informations[$name] = $value;
+	  }
+	}
+	
+	$stu1 = new Student('kabbya', '23', 'setion b', 'bangla');
+	$stu1->name;
+	$stu1->name = "rasel";
+;	$stu1->roll
+?>
