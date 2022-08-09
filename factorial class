@@ -1,0 +1,29 @@
+<?php
+	class FactorialOfAInteger{
+	  protected $integer;
+	  function __construct($integer){
+	    if(!is_int($integer)){
+	      echo "$integer is not an Integer Number . \n";
+	    }else{
+	      $this->integer = $integer;
+	    }
+	  }
+	  function getInteger(){
+	    echo $this->integer . "\n";
+	  }
+	  public function result(){
+	    if(is_int($this->integer)){
+	      $factorial = 1;  
+	    for($i =1; $i <= $this->integer; $i++){
+	      $factorial *=  $i;  
+	    }
+	    return $factorial;
+	    }
+	    
+	  }
+	}
+	$factorial1 = new FactorialOfAInteger('hello');
+	echo $factorial1->getInteger();
+	
+	echo $factorial1->result();
+?>
