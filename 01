@@ -1,0 +1,46 @@
+<?php
+	// Inheritance 
+	
+	class Animal {
+	  protected $name;
+	  
+	  public function __construct($name){
+	    $this->name = $name;
+	  }
+	  public function eat (){
+	    echo "$this->name I am eating \n";
+	  }
+	  public function run(){
+	    echo "$this->name I am running \n";
+	  }
+	  
+	  public function sleep (){
+	    echo "$this->name I am Sleeping \n";
+	  }
+	  
+	  protected function addTitle($title){
+	    $this->name = $title .' ' .$this->name;
+	  }
+	}
+	
+	class Human extends Animal{
+	  public function sayHi(){
+	    $this->addTitle("test");
+	    echo "$this->name HI \n";
+	  }
+	}
+	class Cat extends ANimal{
+	  public function greet(){
+	    echo "$this->name meow";
+	  }
+	}
+	$man = new Human('rasel');
+	$man->sayHi();
+	$man->eat();
+	$man->run();
+
+	
+	$c1 = new Cat('tom');
+	$c1->sleep();
+	$c1->greet();
+?>
