@@ -1,0 +1,43 @@
+<?php
+	class Shape {
+	  protected $name;
+	  
+	  public function __construct($name){
+	    $this->name = $name;
+	  }
+	  protected function getArea($area){
+	    echo "$this->name's area is $area \n";
+	  }
+	}
+	
+	class Ractenagle extends Shape{
+	  public function __construct($name,$a,$b){
+	    parent::__construct($name);
+	    $this->calculateArea($a,$b);
+	  }
+	  
+	  public function calculateArea($a,$b){
+	    $area = $a *$b;
+	    parent::getArea($area);
+
+	  }
+	  
+	  
+	}
+	class Trangle extends Shape{
+	  public function __construct($name,$a,$b,$c){
+	    parent::__construct($name);
+	    $this->calculateArea($a,$b,$c);
+	  }
+	  
+	  private function calculateArea($a,$b,$c){
+	    $paramite = ($a*$b*$c) / 2;
+	    $area = sqrt($paramite*($paramite-$a) * ($paramite-$b) * ($paramite-$c));
+	    parent::getArea($area);
+	  }
+	  
+	}
+	
+	$r = new Ractenagle('Ractenagle', 2,4);
+	$t = new Trangle("Trangle",2,4,3);
+?>
