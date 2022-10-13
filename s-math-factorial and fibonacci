@@ -1,0 +1,70 @@
+<?php
+	class MathCalculator {
+	  static $fibonacci, $factorial;
+	  static function fibonacci($n){
+	   // Initializing first and second number as 0 and 1.
+    //   Print first and second number.
+    //   From next number, start your loop. 
+    //   So third number will be the sum of the first two numbers.
+    
+	    self::$fibonacci = $n;
+	    echo "the fibonacci series fo ther ". self::$fibonacci ." numbers \n";
+	    $first_number = 0;
+	    $secound_number = 1;
+	    $i = 0;
+	    echo "$first_number $secound_number ";
+	    
+	    $num = $n -2;
+	    while ($num > $i){
+	      $n3 = $first_number + $secound_number;
+	      echo $n3 ." ";
+	      $first_number = $secound_number;
+	      $secound_number = $n3;
+	      
+	      $i++;
+	      
+	    }
+	    echo "\n";
+	    
+	   // another example of factorial 
+	    
+	    self::fibonacci2();
+	  }
+	  
+	  static private function fibonacci2(){
+	    echo "Fibonacci ".self::$fibonacci." series using recursive function \n";
+	    
+	    $num = self::$fibonacci;
+	    
+      function series($num){  
+        if($num == 0){  
+          return 0;  
+        }else if( $num == 1){  
+            return 1;  
+        }else {  
+          return (series($num-1) + series($num-2));  
+        }   
+      }  
+      /* Call Function. */  
+      for ($i = 0; $i < $num; $i++){  
+      echo series($i);  
+      echo "\n";  
+      }   
+	  }
+	  
+	  static function factorial($n){
+	    self::$factorial = $n;
+	    $factorial = 1;
+	    while($n > 1){
+	      $factorial *= $n;
+	      $n--;
+	    }
+
+	    echo "the Factorial of ".self::$factorial." is $factorial";
+	    
+	  }
+	  
+	}
+	MathCalculator::fibonacci(7);
+	MathCalculator::factorial(8);
+?>
