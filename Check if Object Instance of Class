@@ -1,0 +1,21 @@
+<?php
+  Trait Pices{
+    public function process(string $fruit, int $items = 1){
+        if($fruit == 'apple'){
+          return 4 * $items;
+        }else{
+          return 6 * $items
+        }
+    }
+  } 
+  
+	class FoodProcess{
+	  use Pices;
+	  private $fruit;
+	  private $itms;
+	  
+	  public function __construct(string $fruit, int $items = 1){
+	      $this->fruit = 
+	  }
+	}
+?>
