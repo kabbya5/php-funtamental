@@ -1,21 +1,44 @@
 <?php
-  Trait Pices{
-    public function process(string $fruit, int $items = 1){
-        if($fruit == 'apple'){
-          return 4 * $items;
-        }else{
-          return 6 * $items
+class Pieces {
+    public function __construct(string $fruit, int $items = 1) {
+        if ($fruit == 'apple') {
+            $this->pieces = $items * 4;
+        } else {
+            $this->pieces = $items * 3;
         }
     }
-  } 
-  
-	class FoodProcess{
-	  use Pices;
-	  private $fruit;
-	  private $itms;
-	  
-	  public function __construct(string $fruit, int $items = 1){
-	      $this->fruit = 
-	  }
-	}
+}
+	
+class FruitProcess {
+    private $items;
+    private $fruit;
+    private $pieces;
+
+    public function __construct(string $fruit, int $items) {
+        $this->items = $items;
+        $this->fruit = $fruit;
+        
+        // Create an object of Pieces
+        $obj = new Pieces($fruit, $items);
+        
+        // Check if $obj is an instance of Pieces
+        if ($obj instanceof Pieces) {
+            $this->pieces = $obj;
+        } else {
+            throw new Exception("Invalid object type.");
+        }
+    }
+
+    // Correcting the method signature and return type
+    public function getPieces(): Pieces {
+        return $this->pieces;
+    }
+}
+try {
+    $fruitProcess = new FruitProcess('apple', 2);
+    $pieces = $fruitProcess->getPieces();
+    echo $pieces->pieces; // Output: 8
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
 ?>
