@@ -16,11 +16,23 @@ class Employee{
 }
 
 class Manager extends Employee{
-    
+    public function getInfo()
+    {
+        return "Manager $this->name, salary $this->salary";
+    }
+}
+
+class Programmer extends Employee{
+    public function getInfo()
+    {
+        return "Programmer $this->name, salary $this->salary";
+    }
 }
 
 $employees = [
-    new Manager('Kabbya', '25000'),
+    new Manager('Manager', '250000'),
+    new Programmer('Programmer','120000'),
+    new Programmer('Programmer2','100000')
 ];
 
 foreach($employees as $employee){
