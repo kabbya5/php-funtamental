@@ -27,10 +27,12 @@ class MathOperations {
     }
 }
 
-// Accessing static property
+// Accessing static property 
+
 echo MathOperations::$pi; // Output: 3.1416
 
 // Calling static methods
+
 echo MathOperations::add(10, 20); // Output: 30
 echo MathOperations::circleArea(5); // Output: 78.54
 
