@@ -83,7 +83,7 @@ class Solution implements RemoveArrayDuplicateInterface, RemoveShortListDuplicat
 
     public function removeDuplicate(array $array)
     {
-        //
+        // i will some thing;
     }
 
 }
