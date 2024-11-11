@@ -1,41 +1,15 @@
 Inheritence:
+nheritance in OOP = When a class derives from another class.
+The child class will inherit all the public and protected properties and methods from the parent class.
+In addition, it can have its own properties and methods.
+An inherited class is defined by using the extends keyword.
 
 Inheritence has main Two goal:
+
 1: Allow Polymorphism,
+
 2: Remove Duplicate Code,
 
-Example: 
-<?php 
-
-class Employee{
-    protected $name;
-    protected $salary;
-
-    public function __construct($name,$salary)
-    {
-        $this->name = $name;
-        $this->salary = $salary;
-    }
-
-    public function getInfo(){
-        return "Employee $this->name, salary $this->salary";
-    }
-}
-
-class Manager extends Employee{
-    
-}
-
-$employees = [
-    new Manager('Kabbya', '25000'),
-];
-
-foreach($employees as $employee){
-    echo $employee->getInfo();
-}
-
-The problem is its shoud print Manage {name} {salary}
-This problem we can solve methodoverridin 
 Whit is method Overriding:
 Method overriding is a feature in object-oriented programming (OOP) that allows a subclass (or derived class) to provide a specific implementation of a method that is already defined in its superclass (or parent class). When a method in a subclass has the same name, return type, and parameters as a method in the superclass, the subclass's method is said to override the method of the superclass.
 
