@@ -27,7 +27,6 @@ class UserRegistration {
         $this->emailService = $emailService;
     }
 
-    // Adds user and sends a welcome email
     public function registerUser($userData) {
         $this->userManager->addUser($userData);
         $this->emailService->sendEmail($userData['email'], "Welcome", "Welcome to our platform!");
